@@ -1,0 +1,104 @@
+@charset "UTF-8";
+.active, h1, ul li, .footer {
+  padding: 1rem; }
+  .active:hover, h1:hover, ul li:hover, .footer:hover, .active:focus, h1:focus, ul li:focus, .footer:focus, .active:active, h1:active, ul li:active, .footer:active {
+    background-color: #022601; }
+
+html {
+  height: 100%; }
+
+body {
+  font-family: "Space Mono", monospace;
+  background-color: #0d0d0d;
+  width: 100%;
+  height: 100%; }
+
+h1 {
+  text-align: right;
+  color: #157307;
+  font-size: 2rem; }
+  @media (max-width: 550px) {
+    h1 {
+      font-size: 1.5rem; } }
+
+p {
+  text-align: right;
+  color: #157307; }
+
+ul {
+  margin-right: 2rem; }
+
+ul li {
+  width: 100%;
+  text-align: right;
+  color: #157307;
+  list-style-type: none; }
+  ul li:hover {
+    border-left: 0.2rem dotted #157307;
+    margin-left: -0.2rem; }
+  ul li:after {
+    content: " «";
+    padding-left: 1rem;
+    padding-right: 0.25rem; }
+
+a {
+  color: #1dbf17;
+  padding: 0.4rem; }
+  a:focus {
+    outline: 0.2rem #022601 solid;
+    border: 0.2rem #0d0d0d solid;
+    margin: -0.2rem;
+    background: #022601; }
+
+.wrapper {
+  height: 100%;
+  width: 100%; }
+  .wrapper:before {
+    content: " ";
+    position: fixed;
+    top: 0rem;
+    left: 0rem;
+    right: 0rem;
+    bottom: 0rem;
+    border: 1.25rem solid #0d0d0d;
+    border-radius: 11vw;
+    box-shadow: inset 0rem 0rem 8rem 0rem #157307;
+    pointer-events: none; }
+  .wrapper:after {
+    content: " ";
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    border: 0.25rem solid #1dbf17;
+    border-radius: 10vw;
+    pointer-events: none; }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100%; }
+
+.main, .footer {
+  width: 50vw; }
+  @media (max-width: 550px) {
+    .main, .footer {
+      width: 80vw; } }
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 3rem;
+  min-height: 50vh;
+  border-right: 10px solid #157307;
+  border-right-style: dashed;
+  border-right-width: 0.2rem; }
+
+.footer {
+  height: auto; }
+
+/*# sourceMappingURL=party.css.map */

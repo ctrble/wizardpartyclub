@@ -1,0 +1,132 @@
+$bodyfont: 'Space Mono', monospace;
+
+$darkestgreen: rgba(13, 13, 13, 1);
+$darkgreen: rgba(2, 38, 1, 1);
+$green: rgba(21, 115, 7, 1);
+$lightgreen: rgba(29, 191, 23, 1);
+$lightestgreen: rgba(29, 242, 43, 1);
+
+// good for buttons and sections of stuff
+.active {
+  padding: 1rem;
+  &:hover, &:focus, &:active {
+    background-color: $darkgreen;
+  }
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: $bodyfont;
+  background-color: $darkestgreen;
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  @extend .active;
+  text-align: right;
+  color: $green;
+  font-size: 2rem;
+  @media (max-width: 550px) {
+    font-size: 1.5rem;
+  }
+}
+
+p {
+  text-align: right;
+  color: $green;
+}
+
+ul {
+  margin-right: 2rem;
+}
+
+ul li {
+  @extend .active;
+  &:hover {
+    border-left: 0.2rem dotted $green;
+    margin-left: -0.2rem;
+  }
+  width: 100%;
+  text-align: right;
+  color: $green;
+  list-style-type: none;
+  &:after{
+    content: " «";
+    padding-left: 1rem;
+    padding-right: 0.25rem;
+  }
+}
+
+a {
+  color: $lightgreen;
+  padding: 0.4rem;
+  &:focus {
+    outline: 0.2rem $darkgreen solid;
+    border: 0.2rem $darkestgreen solid;
+    margin: -0.2rem;
+    background: $darkgreen;
+  }
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  &:before {
+    content: " ";
+    position: fixed;
+    top: 0rem;
+    left: 0rem;
+    right: 0rem;
+    bottom: 0rem;
+    border: 1.25rem solid $darkestgreen;
+    border-radius: 11vw;
+    box-shadow: inset 0rem 0rem 8rem 0rem $green;
+    pointer-events: none;
+  }
+  &:after {
+    content: " ";
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    border: 0.25rem solid $lightgreen;
+    border-radius: 10vw;
+    pointer-events: none;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100%;
+}
+
+.main, .footer {
+  width: 50vw;
+  @media (max-width: 550px) {
+    width: 80vw;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 3rem;
+  min-height: 50vh;
+  border-right: 10px solid $green;
+  border-right-style: dashed;
+  border-right-width: 0.2rem;
+}
+
+.footer {
+  height: auto;
+  @extend .active;
+}

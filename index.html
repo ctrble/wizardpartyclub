@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+	<!-- Basic Page Needs
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta charset="utf-8">
+	<title>Skulz</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- FONT
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+
+	<!-- CSS
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/party.css">
+
+	<!-- Favicon
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="icon" type="image/png" href="images/favicon.png">
+
+	</head>
+
+	<body>
+
+		<!-- Primary Page Layout
+		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+		<div class="wrapper">
+			<div class="container">
+				<div class="main">
+
+					<h1>Dumb shit I made because I wanted to</h1>
+
+					<ul>
+						<li><a href="https://wizard.business/istedcruzthezodiackiller/">Is Ted Cruz the Zodiac Killer?</a></li>
+						<li><a href="https://wizard.business/dumptrump/">When the fuck do we get to dump Trump?</a></li>
+					</ul>
+
+				</div>
+				<div class="footer">
+
+					<p>All Rights Still (2017) Mine: <a href="https://wizard.business">Charlie Trible</a></p>
+
+				</div>
+			</div>
+		</div>
+
+		<script>
+			document.addEventListener('DOMContentLoaded',function(event){
+		  // array with texts to type in typewriter
+			var r_text = new Array ();
+			r_text[0] = "20! Critical hit ¬";
+			r_text[1] = "I am a monster ¬";
+			r_text[2] = "Lizards are the best pets ¬";
+			r_text[3] = "I need more coffee ¬";
+			r_text[4] = "Phantom notification ¬";
+			r_text[5] = "Subversion guidelines ¬";
+			r_text[6] = "Untap a land ¬";
+			r_text[7] = "Level 7 Chaotic Good Sorcerer ¬";
+
+			var i = Math.floor(r_text.length * Math.random());
+			var dataText = [r_text[i],"Dumb shit I made because I wanted to"];
+
+		  // type one text in the typwriter
+		  // keeps calling itself until the text is finished
+		  function typeWriter(text, i, fnCallback) {
+		    // check if text isn't finished yet
+		    if (i < (text.length)) {
+		      // add next character to h1
+		     document.querySelector("h1").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+				 //add a color blink!
+
+		      // wait for a while and call this function again for next character
+		      setTimeout(function() {
+		        typeWriter(text, i + 1, fnCallback)
+		      }, 100);
+		    }
+		    // text finished, call callback if there is a callback function
+		    else if (typeof fnCallback == 'function') {
+		      // call callback after timeout
+		      setTimeout(fnCallback, 700);
+		    }
+		  }
+		  // start a typewriter animation for a text in the dataText array
+		   function StartTextAnimation(i) {
+		     if (typeof dataText[i] == 'undefined'){
+		        setTimeout(function() {
+		          StartTextAnimation(0);
+		        }, 20000);
+		     }
+		     // check if dataText[i] exists
+		    if (i < dataText[i].length) {
+		      // text exists! start typewriter animation
+		     typeWriter(dataText[i], 0, function(){
+		       // after callback (and whole text has been animated), start next text
+		       StartTextAnimation(i + 1);
+		     });
+		    }
+		  }
+		  // start the text animation
+		  StartTextAnimation(0);
+		});
+		</script>
+
+		<!-- End Document
+		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+	</body>
+</html>
