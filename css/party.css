@@ -1,7 +1,7 @@
 @charset "UTF-8";
-.active, h1, ul li, .footer {
+.active, h1, .footer {
   padding: 1rem; }
-  .active:hover, h1:hover, ul li:hover, .footer:hover, .active:focus, h1:focus, ul li:focus, .footer:focus, .active:active, h1:active, ul li:active, .footer:active {
+  .active:link, h1:link, .footer:link, .active:hover, h1:hover, .footer:hover, .active:focus, h1:focus, .footer:focus, .active:active, h1:active, .footer:active {
     background-color: #022601; }
 
 html {
@@ -29,13 +29,11 @@ ul {
   margin-right: 2rem; }
 
 ul li {
+  padding: 1rem;
   width: 100%;
   text-align: right;
   color: #157307;
   list-style-type: none; }
-  ul li:hover {
-    border-left: 0.2rem dotted #157307;
-    margin-left: -0.2rem; }
   ul li:after {
     content: " «";
     padding-left: 1rem;
@@ -44,7 +42,7 @@ ul li {
 a {
   color: #1dbf17;
   padding: 0.4rem; }
-  a:focus {
+  a:hover, a:focus {
     outline: 0.2rem #022601 solid;
     border: 0.2rem #0d0d0d solid;
     margin: -0.2rem;
@@ -72,6 +70,7 @@ a {
     right: 1rem;
     bottom: 1rem;
     border: 0.25rem solid #1dbf17;
+    filter: drop-shadow(0 0 0.5rem #1dbf17);
     border-radius: 10vw;
     pointer-events: none; }
 

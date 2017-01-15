@@ -8,6 +8,7 @@
 	<title>Skulz</title>
 	<meta name="description" content="The digital playground of Charlotte Trible.">
 	<meta name="author" content="Charlotte Trible wizard.business">
+	<meta name="keywords" content="html, js, experiment, charlotte trible">
 
 	<!-- Mobile Specific Metas
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -55,19 +56,37 @@
 
 		<script>
 			document.addEventListener('DOMContentLoaded',function(event){
-		  // array with texts to type in typewriter
-			var r_text = new Array ();
-			r_text[0] = "20! Critical hit ¬";
-			r_text[1] = "I am a monster ¬";
-			r_text[2] = "Lizards are the best pets ¬";
-			r_text[3] = "I need more coffee ¬";
-			r_text[4] = "Phantom notification ¬";
-			r_text[5] = "Subversion guidelines ¬";
-			r_text[6] = "Untap a land ¬";
-			r_text[7] = "Level 7 Chaotic Good Sorcerer ¬";
 
-			var i = Math.floor(r_text.length * Math.random());
-			var dataText = [r_text[i],"Dumb shit I made because I wanted to"];
+			var date = new Date();
+			var hours = date.getHours();
+			var minutes = date.getMinutes();
+			var text = "Dumb shit I made because I wanted to";
+
+			if ((hours == 4 || hours == 16) && minutes == 20) {
+				text = "4:20, make a wish! ¬";
+			} else {
+				var randomText = new Array ();
+				randomText[0] = "20! Critical hit ¬";
+				randomText[1] = "I am a monster ¬";
+				randomText[2] = "Lizards are the best pets ¬";
+				randomText[3] = "Please, more coffee ¬";
+				randomText[4] = "Phantom notification ¬";
+				randomText[5] = "Subversion guidelines ¬";
+				randomText[6] = "Untap a land ¬";
+				randomText[7] = "Level 7 Chaotic Good Sorcerer ¬";
+				randomText[8] = "Why is it sticky? ¬";
+				randomText[9] = "Locally sourced ¬";
+				randomText[10] = "KC × MO ¬";
+				randomText[11] = "I got lost ¬";
+				randomText[12] = "business.etiquette ¬";
+				randomText[13] = "( ﾟヮﾟ) ¬";
+				randomText[14] = "(❍ᴥ❍ʋ) ¬";
+
+				var i = Math.floor(randomText.length * Math.random());
+				text = randomText[i];
+			}
+
+			var dataText = [text,"Dumb shit I made because I wanted to"];
 
 		  // type one text in the typwriter
 		  // keeps calling itself until the text is finished
@@ -76,7 +95,6 @@
 		    if (i < (text.length)) {
 		      // add next character to h1
 		     document.querySelector("h1").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
-				 //add a color blink!
 
 		      // wait for a while and call this function again for next character
 		      setTimeout(function() {
@@ -108,6 +126,17 @@
 		  // start the text animation
 		  StartTextAnimation(0);
 		});
+		</script>
+
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-63011603-2', 'auto');
+		  ga('send', 'pageview');
+
 		</script>
 
 		<!-- End Document
