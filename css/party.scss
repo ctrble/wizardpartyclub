@@ -6,14 +6,6 @@ $green: rgba(21, 115, 7, 1);
 $lightgreen: rgba(29, 191, 23, 1);
 $lightestgreen: rgba(29, 242, 43, 1);
 
-// good for buttons and sections of stuff
-.active {
-  padding: 1rem;
-  &:link, &:hover, &:focus, &:active {
-    background-color: $darkgreen;
-  }
-}
-
 html {
   height: 100%;
 }
@@ -26,45 +18,54 @@ body {
 }
 
 h1 {
-  @extend .active;
   text-align: right;
   color: $green;
-  font-size: 2rem;
+  font-size: 1.5rem;
   @media (max-width: 550px) {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 
 p {
   text-align: right;
   color: $green;
+  font-size: 1rem;
+  @media (max-width: 550px) {
+    font-size: 0.75rem;
+  }
 }
 
 ul {
-  margin-right: 2rem;
+  padding: 0rem;
+  border-right: 1rem $green solid;
 }
 
 ul li {
   padding: 1rem;
-  width: 100%;
   text-align: right;
   color: $green;
   list-style-type: none;
-  &:after{
-    content: " «";
-    padding-left: 1rem;
-    padding-right: 0.25rem;
+  outline: 0.2rem $darkgreen solid;
+  border: 0.2rem $darkestgreen solid;
+  margin: 1rem;
+  &:hover {
+    transition: all 0.3s ease-out;
+    background: $darkgreen;
+    outline: 0.2rem $green solid;
+  }
+  & a:focus {
+    transition: all 0.3s ease-out;
+    background: $darkgreen;
+    outline: 0.2rem $darkgreen solid;
   }
 }
 
 a {
   color: $lightgreen;
-  padding: 0.4rem;
-  &:hover, &:focus {
-    outline: 0.2rem $darkgreen solid;
-    border: 0.2rem $darkestgreen solid;
-    margin: -0.2rem;
-    background: $darkgreen;
+  padding: 0.5rem;
+  font-size: 1rem;
+  @media (max-width: 550px) {
+    font-size: 0.75rem;
   }
 }
 
@@ -80,7 +81,7 @@ a {
     bottom: 0rem;
     border: 1.25rem solid $darkestgreen;
     border-radius: 11vw;
-    box-shadow: inset 0rem 0rem 8rem 0rem $green;
+    box-shadow: inset 0rem 0rem 4rem 0rem $green;
     pointer-events: none;
   }
   &:after {
@@ -100,30 +101,42 @@ a {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   min-height: 100%;
 }
 
-.main, .footer {
-  width: 50vw;
+.header, .main, .footer {
+  width: 60vw;
+  padding: 1rem;
   @media (max-width: 550px) {
     width: 80vw;
   }
+}
+
+.header {
+  margin-top: 4rem;
+  margin-bottom: 0.2rem;
 }
 
 .main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 3rem;
   min-height: 50vh;
-  border-right: 10px solid $green;
-  border-right-style: dashed;
-  border-right-width: 0.2rem;
 }
 
 .footer {
-  height: auto;
-  @extend .active;
+  margin-top: 0.2rem;
+  margin-bottom: 4rem;
+  & a:hover {
+    transition: all 0.3s ease-out;
+    background: $darkgreen;
+    outline: 0.2rem $green solid;
+  }
+  & a:focus {
+    transition: all 0.3s ease-out;
+    background: $darkgreen;
+    outline: 0.2rem $darkgreen solid;
+  }
 }
