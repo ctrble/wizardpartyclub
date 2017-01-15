@@ -11,9 +11,6 @@ $lightestgreen: rgba(29, 242, 43, 1);
   padding: 1rem;
   &:link, &:hover, &:focus, &:active {
     background-color: $darkgreen;
-    // outline: 0.2rem $darkgreen solid;
-    // border: 0.2rem $darkestgreen solid;
-    // margin: -0.2rem;
   }
 }
 
@@ -63,7 +60,6 @@ ul li {
 a {
   color: $lightgreen;
   padding: 0.4rem;
-  // text-shadow: 0 0.1rem 0.5rem $lightgreen;
   &:hover, &:focus {
     outline: 0.2rem $darkgreen solid;
     border: 0.2rem $darkestgreen solid;
